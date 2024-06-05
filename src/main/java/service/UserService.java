@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Класс UserService представляет собой сервис, который обрабатывает команды пользователя и взаимодействует с NoteService.
+ */
 public class UserService {
     private final Scanner scanner = new Scanner(System.in);
     private final NoteService noteService;
@@ -20,6 +23,9 @@ public class UserService {
         this.commands.put("#search", new SearchCommand(noteService));
     }
 
+    /**
+     * Запускает UserService, позволяя пользователю вводить команды и выполнять их.
+     */
     public void run() {
         while (true) {
             System.out.println("Для записи новой заметки введите #write, для чтения уже записанных заметок введите #read");

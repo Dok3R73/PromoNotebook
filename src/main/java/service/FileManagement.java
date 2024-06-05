@@ -11,8 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Класс FileManagement проводит оперции с файлом.
+ */
 public class FileManagement {
 
+    /**
+     * Получает список заметок из файла.
+     *
+     * @return список заметок
+     */
     public List<Note> getFile() {
         File file = new File("src/main/resources/notes.txt");
         List<Note> notes = new ArrayList<>();
@@ -44,6 +52,11 @@ public class FileManagement {
         return notes;
     }
 
+    /**
+     * Записывает заметку в файл.
+     *
+     * @param note заметка для записи
+     */
     public void recordNoteToFile(Note note) {
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/notes.txt", true);

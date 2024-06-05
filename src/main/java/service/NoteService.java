@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * Класс NoteService представляет сервис для работы с заметками.
+ */
 public class NoteService {
     private final FileManagement fileManagement;
     private final List<Note> notes;
@@ -20,6 +23,9 @@ public class NoteService {
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Записывает новую заметку.
+     */
     public void recordNote() {
         System.out.println("Введите вашу новую заметку:");
         Note note = new Note(scanner.nextLine());
@@ -27,6 +33,9 @@ public class NoteService {
         fileManagement.recordNoteToFile(note);
     }
 
+    /**
+     * Выводит все записанные заметки.
+     */
     public void readNotes() {
         if (notes.isEmpty()) {
             System.out.println("Список пуст");
@@ -37,6 +46,9 @@ public class NoteService {
         }
     }
 
+    /**
+     * Выводит общую статистику о заметках.
+     */
     public void statistics() {
         int sum = 0;
         for (Note note : notes) {
@@ -47,6 +59,9 @@ public class NoteService {
         System.out.println("Самый продуктивный день: " + maxDay(notes) + '\n');
     }
 
+    /**
+     * Выполняет поиск заметок по дате введеной пользователем.
+     */
     public void searchDate() {
         System.out.println("Введите дату в формате ГГГГ-ММ-ДД");
         String dateString = scanner.nextLine();
@@ -79,6 +94,12 @@ public class NoteService {
         }
     }
 
+    /**
+     * Возвращает дату, в которую было создано наибольшее количество заметок.
+     *
+     * @param notes список заметок
+     * @return дата с наибольшим количеством заметок
+     */
     public LocalDate maxDay(List<Note> notes) {
         return notes.stream()
                 .collect(Collectors.groupingBy(

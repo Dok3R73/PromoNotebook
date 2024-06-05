@@ -5,6 +5,9 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Класс Note представляет заметку.
+ */
 @Getter
 public class Note {
 

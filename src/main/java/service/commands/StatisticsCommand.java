@@ -2,6 +2,9 @@ package service.commands;
 
 import service.NoteService;
 
+/**
+ * Класс WriteCommand представляет команду для получения статистики по заметкам.
+ */
 public class StatisticsCommand implements Command {
     private final NoteService noteService;
 
