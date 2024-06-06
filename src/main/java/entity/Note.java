@@ -1,16 +1,12 @@
 package entity;
 
-import lombok.Getter;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
  * Класс Note представляет заметку.
  */
-@Getter
 public class Note {
-
 
     private final String content;
     private final LocalDateTime creationTime;
@@ -26,6 +22,18 @@ public class Note {
         this.content = content;
         this.creationTime = creationDateTime;
         this.length = content.length();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public int getLength() {
+        return length;
     }
 
     @Override

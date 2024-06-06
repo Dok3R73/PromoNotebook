@@ -13,13 +13,13 @@ import java.util.stream.Collectors;
  * Класс NoteService представляет сервис для работы с заметками.
  */
 public class NoteService {
-    private final FileManagement fileManagement;
+    private final FileProcessor fileProcessor;
     private final List<Note> notes;
     private final Scanner scanner;
 
     public NoteService() {
-        this.fileManagement = new FileManagement();
-        this.notes = fileManagement.getFile();
+        this.fileProcessor = new FileProcessor();
+        this.notes = fileProcessor.getFile();
         this.scanner = new Scanner(System.in);
     }
 
@@ -30,7 +30,7 @@ public class NoteService {
         System.out.println("Введите вашу новую заметку:");
         Note note = new Note(scanner.nextLine());
         notes.add(note);
-        fileManagement.recordNoteToFile(note);
+        fileProcessor.recordNoteToFile(note);
     }
 
     /**
@@ -54,8 +54,8 @@ public class NoteService {
         for (Note note : notes) {
             sum += note.getLength();
         }
-        System.out.println("Колличество заметок: " + notes.size());
-        System.out.println("Общее колличество символов: " + sum);
+        System.out.println("Количество заметок: " + notes.size());
+        System.out.println("Общее количество символов: " + sum);
         System.out.println("Самый продуктивный день: " + maxDay(notes) + '\n');
     }
 

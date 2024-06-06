@@ -1,4 +1,4 @@
-import service.UserService;
+import service.CommandService;
 
 /**
  * Класс Main является точкой входа в программу.
@@ -6,7 +6,7 @@ import service.UserService;
 public class Main {
 
     public static void main(String[] args) {
-    UserService userService = new UserService();
-    userService.run();
+    CommandService commandService = new CommandService();
+    commandService.run();
     }
 }

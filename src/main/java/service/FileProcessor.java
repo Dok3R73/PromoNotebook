@@ -14,7 +14,7 @@ import java.util.Scanner;
 /**
  * Класс FileManagement проводит оперции с файлом.
  */
-public class FileManagement {
+public class FileProcessor {
 
     /**
      * Получает список заметок из файла.

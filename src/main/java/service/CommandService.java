@@ -7,14 +7,14 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Класс UserService представляет собой сервис, который обрабатывает команды пользователя и взаимодействует с NoteService.
+ * Класс CommandService представляет собой сервис, который обрабатывает команды пользователя и взаимодействует с NoteService.
  */
-public class UserService {
+public class CommandService {
     private final Scanner scanner = new Scanner(System.in);
     private final NoteService noteService;
     private final Map<String, Command> commands;
 
-    public UserService() {
+    public CommandService() {
         this.noteService = new NoteService();
         this.commands = new HashMap<>();
         this.commands.put("#write", new WriteCommand(noteService));
@@ -24,7 +24,7 @@ public class UserService {
     }
 
     /**
-     * Запускает UserService, позволяя пользователю вводить команды и выполнять их.
+     * Запускает CommandService, позволяя пользователю вводить команды и выполнять их.
      */
     public void run() {
         while (true) {
